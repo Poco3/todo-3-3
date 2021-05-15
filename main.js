@@ -12,32 +12,34 @@ const addTask = () => {
   todo.comment = input.value;
   todos.push(todo);
   input.value = '';
+  
   table.innerHTML = ''
   displayTodos();
 };
 const changeStatus = (tr, el) => {
   const statusBtn = document.createElement('button');
   statusBtn.textContent = el.status;
-  let changeBtn = () => {
     statusBtn.addEventListener('click', () => {
-      if (statusBtn.textContent === '作業中') {
+       if (statusBtn.textContent  === '作業中') {
         statusBtn.textContent = '完了'
+        el.status = '完了';
       } else {
         statusBtn.textContent = '作業中';
+        el.status ='作業中';
       }
     });
+    tr.appendChild(statusBtn);
   };
-  changeBtn();
-  tr.appendChild(statusBtn)
-};
+
+  
 const changeDelete = (tr, list) => {
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = '削除';
   deleteBtn.addEventListener('click', () => {
-    todos.splice(list.textContent, 1);
+   todos.splice(list.textContent, 1);
     displayTodos();
   });
-  tr.appendChild(deleteBtn);
+  tr.appendChild(deleteBtn)
 };
 //関数displayTodos
 const displayTodos = () => {
