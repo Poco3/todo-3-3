@@ -9,9 +9,13 @@
     <h1>ToDoリスト</h1>
     ​
     <div>
-      <label><input type="radio" checked="checked" />すべて</label>
-      <label><input type="radio" />完了</label>
-      <label><input type="radio" />作業中</label>
+      <input id="allbtn" type="radio" name="level" value="ok"  class="box"　 checked />
+      <label>すべて</label>
+      <input type="radio" name="level" value="ok" id="donebtn"   class="box"/>
+      <label>完了</label>
+      <input type="radio" name="level" value="ok"　id="workbtn"  class="box"/>
+      <label>作業中</label>
+
       <table>
         <thead>
             <tr>
